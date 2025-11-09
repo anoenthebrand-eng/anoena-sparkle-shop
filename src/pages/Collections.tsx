@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import partyCollection from "@/assets/party-collection.jpg";
-import winterCollection from "@/assets/winter-collection.jpg";
+import menCollection from "@/assets/men-collection.jpg";
+import womenCollection from "@/assets/women-collection.jpg";
 import everydayCollection from "@/assets/everyday-collection.jpg";
 
 const Collections = () => {
@@ -16,12 +17,20 @@ const Collections = () => {
       featured: ["Statement Necklaces", "Chandelier Earrings", "Cocktail Rings"],
     },
     {
-      title: "Winter Collection",
-      tagline: "Winter Elegance Awaits ❄️",
+      title: "Men's Collection",
+      tagline: "Sophisticated Style for Him 🎩",
       description:
-        "Embrace the season with our cozy yet chic winter collection. Featuring warm accessories, elegant scarves, and pieces that add a touch of glamour to your cold-weather wardrobe.",
-      image: winterCollection,
-      featured: ["Cozy Scarves", "Winter Bracelets", "Seasonal Accessories"],
+        "Discover our curated men's collection featuring sophisticated watches, refined bracelets, and elegant accessories. Each piece embodies modern masculinity with timeless appeal.",
+      image: menCollection,
+      featured: ["Luxury Watches", "Leather Bracelets", "Designer Cufflinks"],
+    },
+    {
+      title: "Women's Collection",
+      tagline: "Elegance Redefined 💎",
+      description:
+        "Embrace timeless femininity with our exquisite women's collection. From delicate necklaces to stunning earrings, each piece is crafted to celebrate your unique beauty and style.",
+      image: womenCollection,
+      featured: ["Gold Necklaces", "Diamond Earrings", "Statement Rings"],
     },
     {
       title: "Everyday Elegance",

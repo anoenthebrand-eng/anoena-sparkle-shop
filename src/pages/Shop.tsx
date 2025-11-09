@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import partyCollection from "@/assets/party-collection.jpg";
-import winterCollection from "@/assets/winter-collection.jpg";
+import menCollection from "@/assets/men-collection.jpg";
+import womenCollection from "@/assets/women-collection.jpg";
 import everydayCollection from "@/assets/everyday-collection.jpg";
 
 const Shop = () => {
@@ -13,11 +14,11 @@ const Shop = () => {
 
   const products = [
     { id: "1", name: "Golden Elegance Necklace", price: 299, image: partyCollection, category: "Party Jewellery" },
-    { id: "2", name: "Winter Charm Bracelet", price: 189, image: winterCollection, category: "Winter Collection" },
+    { id: "2", name: "Men's Leather Bracelet", price: 189, image: menCollection, category: "Men's Collection" },
     { id: "3", name: "Everyday Grace Earrings", price: 149, image: everydayCollection, category: "Everyday Elegance" },
     { id: "4", name: "Statement Gold Ring", price: 229, image: partyCollection, category: "Party Jewellery" },
     { id: "5", name: "Delicate Pearl Necklace", price: 349, image: partyCollection, category: "Party Jewellery" },
-    { id: "6", name: "Cozy Winter Scarf Set", price: 179, image: winterCollection, category: "Winter Collection" },
+    { id: "6", name: "Women's Diamond Earrings", price: 279, image: womenCollection, category: "Women's Collection" },
     { id: "7", name: "Minimalist Gold Bracelet", price: 129, image: everydayCollection, category: "Everyday Elegance" },
     { id: "8", name: "Chandelier Earrings", price: 269, image: partyCollection, category: "Party Jewellery" },
   ];
@@ -60,7 +61,8 @@ const Shop = () => {
                   <SelectContent>
                     <SelectItem value="all">All Categories</SelectItem>
                     <SelectItem value="Party Jewellery">Party Jewellery</SelectItem>
-                    <SelectItem value="Winter Collection">Winter Collection</SelectItem>
+                    <SelectItem value="Men's Collection">Men's Collection</SelectItem>
+                    <SelectItem value="Women's Collection">Women's Collection</SelectItem>
                     <SelectItem value="Everyday Elegance">Everyday Elegance</SelectItem>
                   </SelectContent>
                 </Select>

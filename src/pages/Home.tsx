@@ -4,7 +4,8 @@ import { ArrowRight, Star, Sparkles, Heart } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import heroBanner from "@/assets/hero-banner.jpg";
 import partyCollection from "@/assets/party-collection.jpg";
-import winterCollection from "@/assets/winter-collection.jpg";
+import menCollection from "@/assets/men-collection.jpg";
+import womenCollection from "@/assets/women-collection.jpg";
 import everydayCollection from "@/assets/everyday-collection.jpg";
 
 const Home = () => {
@@ -18,10 +19,10 @@ const Home = () => {
     },
     {
       id: "2",
-      name: "Winter Charm Bracelet",
-      price: 189,
-      image: winterCollection,
-      category: "Winter Collection",
+      name: "Men's Luxury Watch",
+      price: 489,
+      image: menCollection,
+      category: "Men's Collection",
     },
     {
       id: "3",
@@ -47,15 +48,15 @@ const Home = () => {
       link: "/collections",
     },
     {
-      title: "Winter Collection",
-      description: "Cozy elegance for the season",
-      image: winterCollection,
+      title: "Men's Collection",
+      description: "Sophisticated style for him",
+      image: menCollection,
       link: "/collections",
     },
     {
-      title: "Everyday Elegance",
-      description: "Timeless pieces for daily grace",
-      image: everydayCollection,
+      title: "Women's Collection",
+      description: "Elegance redefined",
+      image: womenCollection,
       link: "/collections",
     },
   ];
