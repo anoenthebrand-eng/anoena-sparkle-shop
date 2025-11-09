@@ -1,44 +1,44 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import partyCollection from "@/assets/party-collection.jpg";
-import menCollection from "@/assets/men-collection.jpg";
-import womenCollection from "@/assets/women-collection.jpg";
-import everydayCollection from "@/assets/everyday-collection.jpg";
+import partyMenCollection from "@/assets/party-men-collection.jpg";
+import partyWomenCollection from "@/assets/party-women-collection.jpg";
+import winterMenCollection from "@/assets/winter-men-collection.jpg";
+import winterWomenCollection from "@/assets/winter-women-collection.jpg";
 
 const Collections = () => {
   const collections = [
     {
-      title: "Party Jewellery",
-      tagline: "Shine bright at every celebration ✨",
+      title: "Party Jewellery for Men",
+      tagline: "Make a Statement ✨",
       description:
-        "Make a statement with our stunning party jewellery collection. From elegant necklaces to dazzling earrings, each piece is designed to capture the spotlight and make you feel extraordinary.",
-      image: partyCollection,
-      featured: ["Statement Necklaces", "Chandelier Earrings", "Cocktail Rings"],
+        "Elevate your party look with our sophisticated men's jewellery collection. From luxury watches to designer cufflinks and statement rings, each piece adds the perfect finishing touch to your celebration style.",
+      image: partyMenCollection,
+      featured: ["Luxury Watches", "Designer Cufflinks", "Statement Rings"],
     },
     {
-      title: "Men's Collection",
-      tagline: "Sophisticated Style for Him 🎩",
+      title: "Party Jewellery for Women",
+      tagline: "Shine Bright at Every Celebration 💎",
       description:
-        "Discover our curated men's collection featuring sophisticated watches, refined bracelets, and elegant accessories. Each piece embodies modern masculinity with timeless appeal.",
-      image: menCollection,
-      featured: ["Luxury Watches", "Leather Bracelets", "Designer Cufflinks"],
+        "Dazzle the crowd with our stunning women's party jewellery. From chandelier earrings to statement necklaces and cocktail rings, each piece is designed to capture the spotlight and make you feel extraordinary.",
+      image: partyWomenCollection,
+      featured: ["Chandelier Earrings", "Statement Necklaces", "Cocktail Rings"],
     },
     {
-      title: "Women's Collection",
-      tagline: "Elegance Redefined 💎",
+      title: "Winter Collection for Men",
+      tagline: "Sophisticated Winter Style 🎩",
       description:
-        "Embrace timeless femininity with our exquisite women's collection. From delicate necklaces to stunning earrings, each piece is crafted to celebrate your unique beauty and style.",
-      image: womenCollection,
-      featured: ["Gold Necklaces", "Diamond Earrings", "Statement Rings"],
+        "Stay elegant through the cooler months with our men's winter collection. Featuring refined accessories, cozy scarves, and timeless pieces that blend warmth with style for the modern gentleman.",
+      image: winterMenCollection,
+      featured: ["Wool Scarves", "Leather Gloves", "Winter Accessories"],
     },
     {
-      title: "Everyday Elegance",
-      tagline: "Grace in Every Moment 💫",
+      title: "Winter Collection for Women",
+      tagline: "Cozy Elegance ❄️",
       description:
-        "Timeless pieces designed for daily wear. Our everyday elegance collection features delicate, versatile jewellery that effortlessly elevates any outfit, from office to evening.",
-      image: everydayCollection,
-      featured: ["Minimalist Necklaces", "Delicate Bracelets", "Simple Earrings"],
+        "Embrace the winter season with grace. Our women's winter collection features luxurious shawls, elegant winter jewellery, and sophisticated accessories that keep you warm while looking effortlessly chic.",
+      image: winterWomenCollection,
+      featured: ["Cashmere Shawls", "Winter Jewellery", "Elegant Scarves"],
     },
   ];
 

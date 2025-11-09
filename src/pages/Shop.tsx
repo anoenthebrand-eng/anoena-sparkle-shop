@@ -3,24 +3,24 @@ import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
-import partyCollection from "@/assets/party-collection.jpg";
-import menCollection from "@/assets/men-collection.jpg";
-import womenCollection from "@/assets/women-collection.jpg";
-import everydayCollection from "@/assets/everyday-collection.jpg";
+import partyMenCollection from "@/assets/party-men-collection.jpg";
+import partyWomenCollection from "@/assets/party-women-collection.jpg";
+import winterMenCollection from "@/assets/winter-men-collection.jpg";
+import winterWomenCollection from "@/assets/winter-women-collection.jpg";
 
 const Shop = () => {
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const products = [
-    { id: "1", name: "Golden Elegance Necklace", price: 299, image: partyCollection, category: "Party Jewellery" },
-    { id: "2", name: "Men's Leather Bracelet", price: 189, image: menCollection, category: "Men's Collection" },
-    { id: "3", name: "Everyday Grace Earrings", price: 149, image: everydayCollection, category: "Everyday Elegance" },
-    { id: "4", name: "Statement Gold Ring", price: 229, image: partyCollection, category: "Party Jewellery" },
-    { id: "5", name: "Delicate Pearl Necklace", price: 349, image: partyCollection, category: "Party Jewellery" },
-    { id: "6", name: "Women's Diamond Earrings", price: 279, image: womenCollection, category: "Women's Collection" },
-    { id: "7", name: "Minimalist Gold Bracelet", price: 129, image: everydayCollection, category: "Everyday Elegance" },
-    { id: "8", name: "Chandelier Earrings", price: 269, image: partyCollection, category: "Party Jewellery" },
+    { id: "1", name: "Golden Elegance Necklace", price: 299, image: partyWomenCollection, category: "Party Jewellery for Women" },
+    { id: "2", name: "Men's Luxury Watch", price: 589, image: partyMenCollection, category: "Party Jewellery for Men" },
+    { id: "3", name: "Cashmere Shawl", price: 249, image: winterWomenCollection, category: "Winter Collection for Women" },
+    { id: "4", name: "Designer Cufflinks", price: 199, image: partyMenCollection, category: "Party Jewellery for Men" },
+    { id: "5", name: "Chandelier Earrings", price: 269, image: partyWomenCollection, category: "Party Jewellery for Women" },
+    { id: "6", name: "Wool Scarf", price: 179, image: winterMenCollection, category: "Winter Collection for Men" },
+    { id: "7", name: "Winter Jewellery Set", price: 329, image: winterWomenCollection, category: "Winter Collection for Women" },
+    { id: "8", name: "Statement Ring", price: 229, image: partyMenCollection, category: "Party Jewellery for Men" },
   ];
 
   const filteredProducts = products.filter((product) => {
@@ -60,10 +60,10 @@ const Shop = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">All Categories</SelectItem>
-                    <SelectItem value="Party Jewellery">Party Jewellery</SelectItem>
-                    <SelectItem value="Men's Collection">Men's Collection</SelectItem>
-                    <SelectItem value="Women's Collection">Women's Collection</SelectItem>
-                    <SelectItem value="Everyday Elegance">Everyday Elegance</SelectItem>
+                    <SelectItem value="Party Jewellery for Men">Party Jewellery for Men</SelectItem>
+                    <SelectItem value="Party Jewellery for Women">Party Jewellery for Women</SelectItem>
+                    <SelectItem value="Winter Collection for Men">Winter Collection for Men</SelectItem>
+                    <SelectItem value="Winter Collection for Women">Winter Collection for Women</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

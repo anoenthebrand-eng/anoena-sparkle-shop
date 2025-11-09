@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Sparkles, Heart } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import heroBanner from "@/assets/hero-banner.jpg";
-import partyCollection from "@/assets/party-collection.jpg";
-import menCollection from "@/assets/men-collection.jpg";
-import womenCollection from "@/assets/women-collection.jpg";
-import everydayCollection from "@/assets/everyday-collection.jpg";
+import partyMenCollection from "@/assets/party-men-collection.jpg";
+import partyWomenCollection from "@/assets/party-women-collection.jpg";
+import winterMenCollection from "@/assets/winter-men-collection.jpg";
+import winterWomenCollection from "@/assets/winter-women-collection.jpg";
 
 const Home = () => {
   const featuredProducts = [
@@ -14,49 +14,49 @@ const Home = () => {
       id: "1",
       name: "Golden Elegance Necklace",
       price: 299,
-      image: partyCollection,
-      category: "Party Jewellery",
+      image: partyWomenCollection,
+      category: "Party Jewellery for Women",
     },
     {
       id: "2",
       name: "Men's Luxury Watch",
       price: 489,
-      image: menCollection,
-      category: "Men's Collection",
+      image: partyMenCollection,
+      category: "Party Jewellery for Men",
     },
     {
       id: "3",
-      name: "Everyday Grace Earrings",
-      price: 149,
-      image: everydayCollection,
-      category: "Everyday Elegance",
+      name: "Cashmere Shawl",
+      price: 249,
+      image: winterWomenCollection,
+      category: "Winter Collection for Women",
     },
     {
       id: "4",
-      name: "Statement Gold Ring",
-      price: 229,
-      image: partyCollection,
-      category: "Party Jewellery",
+      name: "Designer Cufflinks",
+      price: 199,
+      image: partyMenCollection,
+      category: "Party Jewellery for Men",
     },
   ];
 
   const collections = [
     {
-      title: "Party Jewellery",
+      title: "Party Jewellery for Women",
       description: "Shine bright at every celebration",
-      image: partyCollection,
+      image: partyWomenCollection,
       link: "/collections",
     },
     {
-      title: "Men's Collection",
-      description: "Sophisticated style for him",
-      image: menCollection,
+      title: "Party Jewellery for Men",
+      description: "Make a statement",
+      image: partyMenCollection,
       link: "/collections",
     },
     {
-      title: "Women's Collection",
-      description: "Elegance redefined",
-      image: womenCollection,
+      title: "Winter Collection for Women",
+      description: "Cozy elegance",
+      image: winterWomenCollection,
       link: "/collections",
     },
   ];
