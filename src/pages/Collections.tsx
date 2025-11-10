@@ -1,44 +1,39 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import partyMenCollection from "@/assets/party-men-collection.jpg";
-import partyWomenCollection from "@/assets/party-women-collection.jpg";
-import winterMenCollection from "@/assets/winter-men-collection.jpg";
-import winterWomenCollection from "@/assets/winter-women-collection.jpg";
+import smartHomeCollection from "@/assets/smart-home-collection.jpg";
+import portableTechCollection from "@/assets/portable-tech-collection.jpg";
+import chargingCollection from "@/assets/charging-collection.jpg";
+import audioCollection from "@/assets/audio-collection.jpg";
 
 const Collections = () => {
   const collections = [
     {
-      title: "Party Jewellery for Men",
-      tagline: "Make a Statement ✨",
-      description:
-        "Elevate your party look with our sophisticated men's jewellery collection. From luxury watches to designer cufflinks and statement rings, each piece adds the perfect finishing touch to your celebration style.",
-      image: partyMenCollection,
-      featured: ["Luxury Watches", "Designer Cufflinks", "Statement Rings"],
+      title: "Smart Home",
+      description: "Transform your space with intelligent devices",
+      image: smartHomeCollection,
+      items: "12+ products",
+      link: "/shop",
     },
     {
-      title: "Party Jewellery for Women",
-      tagline: "Shine Bright at Every Celebration 💎",
-      description:
-        "Dazzle the crowd with our stunning women's party jewellery. From chandelier earrings to statement necklaces and cocktail rings, each piece is designed to capture the spotlight and make you feel extraordinary.",
-      image: partyWomenCollection,
-      featured: ["Chandelier Earrings", "Statement Necklaces", "Cocktail Rings"],
+      title: "Portable Tech",
+      description: "Tech essentials on the go",
+      image: portableTechCollection,
+      items: "8+ products",
+      link: "/shop",
     },
     {
-      title: "Winter Collection for Men",
-      tagline: "Sophisticated Winter Style 🎩",
-      description:
-        "Stay elegant through the cooler months with our men's winter collection. Featuring refined accessories, cozy scarves, and timeless pieces that blend warmth with style for the modern gentleman.",
-      image: winterMenCollection,
-      featured: ["Wool Scarves", "Leather Gloves", "Winter Accessories"],
+      title: "Charging & Power",
+      description: "Never run out of power again",
+      image: chargingCollection,
+      items: "10+ products",
+      link: "/shop",
     },
     {
-      title: "Winter Collection for Women",
-      tagline: "Cozy Elegance ❄️",
-      description:
-        "Embrace the winter season with grace. Our women's winter collection features luxurious shawls, elegant winter jewellery, and sophisticated accessories that keep you warm while looking effortlessly chic.",
-      image: winterWomenCollection,
-      featured: ["Cashmere Shawls", "Winter Jewellery", "Elegant Scarves"],
+      title: "Audio & Sound",
+      description: "Premium sound for every moment",
+      image: audioCollection,
+      items: "6+ products",
+      link: "/shop",
     },
   ];
 
@@ -51,98 +46,68 @@ const Collections = () => {
             Our Collections
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up">
-            Each collection tells a story of elegance, crafted for the modern woman who embraces her unique style
+            Explore our curated selection of smart electronics designed for modern living
           </p>
         </div>
       </section>
 
-      {/* Collections */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="space-y-24">
+      {/* Collections Grid */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {collections.map((collection, index) => (
-            <div
+            <Link
               key={index}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? "lg:grid-flow-dense" : ""
-              }`}
+              to={collection.link}
+              className="group relative overflow-hidden rounded-lg aspect-[4/3] hover-lift"
             >
-              {/* Image */}
-              <div
-                className={`relative overflow-hidden rounded-lg aspect-square hover-lift ${
-                  index % 2 === 1 ? "lg:col-start-2" : ""
-                }`}
-              >
-                <img
-                  src={collection.image}
-                  alt={collection.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-              </div>
-
-              {/* Content */}
-              <div className={`space-y-6 ${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
-                <div>
-                  <h2 className="text-4xl font-display font-bold mb-2">
-                    {collection.title}
-                  </h2>
-                  <p className="text-xl text-primary font-medium">
-                    {collection.tagline}
-                  </p>
-                </div>
-
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  {collection.description}
+              <img
+                src={collection.image}
+                alt={collection.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-tech-dark/90 via-tech-dark/50 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                <p className="text-sm text-primary font-semibold mb-2 uppercase tracking-wide">
+                  {collection.items}
                 </p>
-
-                <div>
-                  <h3 className="font-semibold mb-3">Featured in this collection:</h3>
-                  <ul className="space-y-2">
-                    {collection.featured.map((item, i) => (
-                      <li key={i} className="flex items-center text-muted-foreground">
-                        <span className="w-2 h-2 bg-primary rounded-full mr-3" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-white"
-                >
-                  <Link to="/shop">
-                    Shop This Collection
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
+                <h3 className="text-3xl font-display font-bold mb-3">
+                  {collection.title}
+                </h3>
+                <p className="text-white/90 mb-4 text-lg">{collection.description}</p>
+                <span className="inline-flex items-center text-primary font-semibold text-lg">
+                  Explore Collection
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-primary/10 to-rose/20 py-20">
+      <section className="bg-gradient-to-r from-primary/10 to-tech-gray-light py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-display font-bold mb-4">
-            Can't Decide?
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+            Can't find what you're looking for?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Explore all our products and discover pieces that speak to your unique style
+          <p className="text-muted-foreground mb-8 text-lg">
+            Browse our full shop or get in touch with our team
           </p>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-primary text-primary hover:bg-primary hover:text-white"
-          >
-            <Link to="/shop">
-              Browse All Products
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/shop"
+              className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-semibold"
+            >
+              View All Products
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-          </Button>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-3 border-2 border-border rounded-md hover:border-primary hover:text-primary transition-colors font-semibold"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
     </div>

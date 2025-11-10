@@ -1,80 +1,98 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Sparkles, Heart } from "lucide-react";
+import { ArrowRight, Star, Zap, Shield, Truck, Headphones, Mail } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import ProductCard from "@/components/ProductCard";
 import heroBanner from "@/assets/hero-banner.jpg";
-import partyMenCollection from "@/assets/party-men-collection.jpg";
-import partyWomenCollection from "@/assets/party-women-collection.jpg";
-import winterMenCollection from "@/assets/winter-men-collection.jpg";
-import winterWomenCollection from "@/assets/winter-women-collection.jpg";
+import smartHomeCollection from "@/assets/smart-home-collection.jpg";
+import portableTechCollection from "@/assets/portable-tech-collection.jpg";
+import chargingCollection from "@/assets/charging-collection.jpg";
 
 const Home = () => {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+
+  const handleNewsletter = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      toast({
+        title: "Welcome to ANOENA Smart Circle! 🎉",
+        description: "You'll receive exclusive deals and tech updates.",
+      });
+      setEmail("");
+    }
+  };
+
   const featuredProducts = [
     {
       id: "1",
-      name: "Golden Elegance Necklace",
-      price: 299,
-      image: partyWomenCollection,
-      category: "Party Jewellery for Women",
+      name: "Smart LED Planter",
+      price: 89,
+      image: smartHomeCollection,
+      category: "Smart Home",
     },
     {
       id: "2",
-      name: "Men's Luxury Watch",
-      price: 489,
-      image: partyMenCollection,
-      category: "Party Jewellery for Men",
+      name: "Portable Air Pump Pro",
+      price: 45,
+      image: portableTechCollection,
+      category: "Portable Tech",
     },
     {
       id: "3",
-      name: "Cashmere Shawl",
-      price: 249,
-      image: winterWomenCollection,
-      category: "Winter Collection for Women",
+      name: "Fast Charging Kit",
+      price: 35,
+      image: chargingCollection,
+      category: "Charging & Power",
     },
     {
       id: "4",
-      name: "Designer Cufflinks",
-      price: 199,
-      image: partyMenCollection,
-      category: "Party Jewellery for Men",
+      name: "Smart Desk Lamp",
+      price: 65,
+      image: smartHomeCollection,
+      category: "Smart Home",
     },
   ];
 
-  const collections = [
+  const whyChooseUs = [
     {
-      title: "Party Jewellery for Women",
-      description: "Shine bright at every celebration",
-      image: partyWomenCollection,
-      link: "/collections",
+      icon: <Zap className="h-8 w-8 text-primary" />,
+      title: "Innovation First",
+      description: "Cutting-edge technology that simplifies your daily life",
     },
     {
-      title: "Party Jewellery for Men",
-      description: "Make a statement",
-      image: partyMenCollection,
-      link: "/collections",
+      icon: <Shield className="h-8 w-8 text-primary" />,
+      title: "Quality Guaranteed",
+      description: "Premium materials with rigorous testing standards",
     },
     {
-      title: "Winter Collection for Women",
-      description: "Cozy elegance",
-      image: winterWomenCollection,
-      link: "/collections",
+      icon: <Truck className="h-8 w-8 text-primary" />,
+      title: "Fast Delivery",
+      description: "Quick shipping to get your tech gadgets to you ASAP",
+    },
+    {
+      icon: <Headphones className="h-8 w-8 text-primary" />,
+      title: "24/7 Support",
+      description: "Always here to help with any questions or concerns",
     },
   ];
 
   const testimonials = [
     {
-      name: "Amira K.",
-      text: "ANOENA pieces are absolutely stunning! The quality is exceptional and I receive compliments every time I wear them.",
+      name: "Sarah M.",
+      text: "The smart planter is a game-changer! My plants have never been healthier. ANOENA makes tech so accessible.",
       rating: 5,
     },
     {
-      name: "Layla M.",
-      text: "Finally found a brand that understands modern femininity. Their winter collection is to die for!",
+      name: "James K.",
+      text: "Love the portable air pump! Perfect for my car and bike. Great quality and super convenient.",
       rating: 5,
     },
     {
-      name: "Sophia R.",
-      text: "The customer service is as beautiful as their jewellery. Fast delivery and gorgeous packaging!",
+      name: "Emily R.",
+      text: "Fast shipping and excellent customer service. The LED lamp is beautiful and functional. Highly recommend!",
       rating: 5,
     },
   ];
@@ -82,36 +100,34 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden bg-tech-dark">
         <div className="absolute inset-0">
           <img
             src={heroBanner}
-            alt="ANOENA Hero"
-            className="w-full h-full object-cover"
+            alt="ANOENA Electronics Hero"
+            className="w-full h-full object-cover opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-tech-dark/90 to-tech-dark/70" />
         </div>
 
-        <div className="relative z-10 text-center px-4 animate-fade-in">
-          <div className="flex justify-center mb-4">
-            <Sparkles className="h-12 w-12 text-primary animate-pulse" />
+        <div className="relative z-10 text-center px-4 animate-fade-in max-w-4xl">
+          <div className="flex justify-center mb-6">
+            <Zap className="h-16 w-16 text-primary animate-pulse" />
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6">
-            Shine Every Moment
-            <br />
-            with ANOENA
+            ⚡ Smart. Simple. Everyday Tech.
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
-            Discover elegance that celebrates you
+            Discover smarter living with ANOENA — everyday tech that makes life easier.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-white text-lg px-8"
+              className="bg-primary hover:bg-primary/90 text-white text-lg px-8 shadow-tech"
             >
               <Link to="/shop">
-                Shop the Look
+                Shop Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -119,7 +135,7 @@ const Home = () => {
               asChild
               size="lg"
               variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-foreground text-lg px-8"
+              className="bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-tech-dark text-lg px-8"
             >
               <Link to="/collections">Explore Collections</Link>
             </Button>
@@ -127,42 +143,21 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Collections */}
+      {/* About / Our Shop */}
       <section className="container mx-auto px-4 py-20">
-        <div className="text-center mb-12 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Our Collections
+        <div className="max-w-4xl mx-auto text-center animate-slide-up">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+            Welcome to ANOENA Electronics
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Curated with love for every occasion
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            We bring you stylish and practical electronics designed for everyday living. 
+            From smart home devices to portable tech essentials, ANOENA combines innovation 
+            with elegant design to enhance your lifestyle.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {collections.map((collection, index) => (
-            <Link
-              key={index}
-              to={collection.link}
-              className="group relative overflow-hidden rounded-lg aspect-[3/4] hover-lift"
-            >
-              <img
-                src={collection.image}
-                alt={collection.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-2xl font-display font-bold mb-2">
-                  {collection.title}
-                </h3>
-                <p className="text-white/90 mb-4">{collection.description}</p>
-                <span className="inline-flex items-center text-primary font-semibold">
-                  Discover
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </div>
-            </Link>
-          ))}
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Our mission is simple: make cutting-edge technology accessible, affordable, 
+            and beautifully integrated into your daily routine. Welcome to smarter living.
+          </p>
         </div>
       </section>
 
@@ -171,10 +166,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-              Best Sellers
+              Featured Products
             </h2>
             <p className="text-muted-foreground text-lg">
-              Our most loved pieces
+              Smart planters, LED lamps, portable air pumps, charging kits & more
             </p>
           </div>
 
@@ -200,56 +195,89 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Why Choose Us */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Loved by Women Everywhere
+            Why Choose ANOENA?
           </h2>
           <p className="text-muted-foreground text-lg">
-            See what our customers say
+            Innovation, design, and convenience in every product
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {whyChooseUs.map((item, index) => (
             <div
               key={index}
-              className="bg-card border border-border rounded-lg p-6 hover-lift"
+              className="bg-card border border-border rounded-lg p-6 text-center hover-lift hover:border-primary transition-colors"
             >
-              <div className="flex mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                ))}
-              </div>
-              <p className="text-foreground mb-4 italic">"{testimonial.text}"</p>
-              <p className="font-semibold text-primary">{testimonial.name}</p>
+              <div className="flex justify-center mb-4">{item.icon}</div>
+              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+              <p className="text-muted-foreground">{item.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-primary/10 to-rose/20 py-20">
+      {/* Customer Reviews */}
+      <section className="bg-gradient-to-b from-secondary to-background py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+              Customer Reviews
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              See what our satisfied customers are saying
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-card border border-border rounded-lg p-6 hover-lift"
+              >
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-foreground mb-4 italic">"{testimonial.text}"</p>
+                <p className="font-semibold text-primary">{testimonial.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section className="bg-tech-dark py-20">
         <div className="container mx-auto px-4 text-center">
-          <Heart className="h-16 w-16 text-primary mx-auto mb-6 animate-pulse" />
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Join the ANOENA Circle
+          <Mail className="h-16 w-16 text-primary mx-auto mb-6 animate-pulse" />
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            Join the ANOENA Smart Circle
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Be the first to discover new collections, exclusive offers, and
-            style inspiration
+          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+            Subscribe for exclusive deals, new product launches, and tech tips delivered straight to your inbox.
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-white text-lg px-8"
-          >
-            <Link to="/contact">
-              Get in Touch
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <form onSubmit={handleNewsletter} className="max-w-md mx-auto flex gap-3">
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/60"
+            />
+            <Button
+              type="submit"
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white px-8"
+            >
+              Subscribe
+            </Button>
+          </form>
         </div>
       </section>
     </div>

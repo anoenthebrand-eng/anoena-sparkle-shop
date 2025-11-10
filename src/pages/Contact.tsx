@@ -23,7 +23,7 @@ const Contact = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/971501234567?text=Hi%20ANOENA!", "_blank");
+    window.open("https://wa.me/971501234567?text=Hi%20ANOENA%20Electronics!", "_blank");
   };
 
   return (
@@ -35,7 +35,7 @@ const Contact = () => {
             Get in Touch
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up">
-            We'd love to hear from you! Reach out and let's create something beautiful together.
+            Have questions about our products? Need tech support? We're here to help!
           </p>
         </div>
       </section>
@@ -125,13 +125,13 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Email Us</h3>
                   <p className="text-muted-foreground mb-2">
-                    For detailed inquiries or custom orders
+                    For product inquiries or technical support
                   </p>
                   <a
-                    href="mailto:hello@anoena.com"
+                    href="mailto:support@anoena.com"
                     className="text-primary hover:underline font-medium"
                   >
-                    hello@anoena.com
+                    support@anoena.com
                   </a>
                 </div>
               </div>
@@ -141,7 +141,7 @@ const Contact = () => {
             <div className="bg-card border border-border rounded-lg p-6">
               <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
               <p className="text-muted-foreground mb-4">
-                Stay connected for the latest collections and style inspiration
+                Stay connected for new products, tech tips, and exclusive offers
               </p>
               <div className="flex gap-4">
                 <Button

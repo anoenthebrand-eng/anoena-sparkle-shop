@@ -1,33 +1,107 @@
 import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
-import partyMenCollection from "@/assets/party-men-collection.jpg";
-import partyWomenCollection from "@/assets/party-women-collection.jpg";
-import winterMenCollection from "@/assets/winter-men-collection.jpg";
-import winterWomenCollection from "@/assets/winter-women-collection.jpg";
+import smartHomeCollection from "@/assets/smart-home-collection.jpg";
+import portableTechCollection from "@/assets/portable-tech-collection.jpg";
+import chargingCollection from "@/assets/charging-collection.jpg";
+import audioCollection from "@/assets/audio-collection.jpg";
 
 const Shop = () => {
-  const [priceRange, setPriceRange] = useState([0, 1000]);
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const categories = ["All", "Smart Home", "Portable Tech", "Charging & Power", "Audio & Sound"];
 
   const products = [
-    { id: "1", name: "Golden Elegance Necklace", price: 299, image: partyWomenCollection, category: "Party Jewellery for Women" },
-    { id: "2", name: "Men's Luxury Watch", price: 589, image: partyMenCollection, category: "Party Jewellery for Men" },
-    { id: "3", name: "Cashmere Shawl", price: 249, image: winterWomenCollection, category: "Winter Collection for Women" },
-    { id: "4", name: "Designer Cufflinks", price: 199, image: partyMenCollection, category: "Party Jewellery for Men" },
-    { id: "5", name: "Chandelier Earrings", price: 269, image: partyWomenCollection, category: "Party Jewellery for Women" },
-    { id: "6", name: "Wool Scarf", price: 179, image: winterMenCollection, category: "Winter Collection for Men" },
-    { id: "7", name: "Winter Jewellery Set", price: 329, image: winterWomenCollection, category: "Winter Collection for Women" },
-    { id: "8", name: "Statement Ring", price: 229, image: partyMenCollection, category: "Party Jewellery for Men" },
+    {
+      id: "1",
+      name: "Smart LED Planter",
+      price: 89,
+      image: smartHomeCollection,
+      category: "Smart Home",
+    },
+    {
+      id: "2",
+      name: "WiFi Smart Plug",
+      price: 25,
+      image: smartHomeCollection,
+      category: "Smart Home",
+    },
+    {
+      id: "3",
+      name: "Smart Desk Lamp",
+      price: 65,
+      image: smartHomeCollection,
+      category: "Smart Home",
+    },
+    {
+      id: "4",
+      name: "Portable Air Pump Pro",
+      price: 45,
+      image: portableTechCollection,
+      category: "Portable Tech",
+    },
+    {
+      id: "5",
+      name: "Mini Handheld Fan",
+      price: 18,
+      image: portableTechCollection,
+      category: "Portable Tech",
+    },
+    {
+      id: "6",
+      name: "Portable Phone Stand",
+      price: 22,
+      image: portableTechCollection,
+      category: "Portable Tech",
+    },
+    {
+      id: "7",
+      name: "Fast Charging Kit",
+      price: 35,
+      image: chargingCollection,
+      category: "Charging & Power",
+    },
+    {
+      id: "8",
+      name: "Wireless Charging Pad",
+      price: 42,
+      image: chargingCollection,
+      category: "Charging & Power",
+    },
+    {
+      id: "9",
+      name: "Power Bank 20000mAh",
+      price: 55,
+      image: chargingCollection,
+      category: "Charging & Power",
+    },
+    {
+      id: "10",
+      name: "Bluetooth Speaker Mini",
+      price: 48,
+      image: audioCollection,
+      category: "Audio & Sound",
+    },
+    {
+      id: "11",
+      name: "Wireless Earbuds Pro",
+      price: 78,
+      image: audioCollection,
+      category: "Audio & Sound",
+    },
+    {
+      id: "12",
+      name: "USB Sound Card",
+      price: 28,
+      image: audioCollection,
+      category: "Audio & Sound",
+    },
   ];
 
-  const filteredProducts = products.filter((product) => {
-    const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
-    const matchesPrice = product.price >= priceRange[0] && product.price <= priceRange[1];
-    return matchesCategory && matchesPrice;
-  });
+  const filteredProducts =
+    selectedCategory === "All"
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
 
   return (
     <div className="min-h-screen">
@@ -35,101 +109,48 @@ const Shop = () => {
       <section className="bg-secondary py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-display font-bold mb-4 animate-fade-in">
-            Shop ANOENA
+            Shop Smart Electronics
           </h1>
-          <p className="text-lg text-muted-foreground animate-slide-up">
-            Discover your sparkle ✨
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up">
+            Discover innovative gadgets that make everyday life easier and smarter
           </p>
         </div>
       </section>
 
       {/* Shop Content */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Filters Sidebar */}
-          <aside className="lg:col-span-1">
-            <div className="bg-card border border-border rounded-lg p-6 sticky top-24">
-              <h3 className="text-xl font-display font-bold mb-6">Filters</h3>
-
-              {/* Category Filter */}
-              <div className="mb-6">
-                <label className="text-sm font-semibold mb-3 block">Category</label>
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="All Categories" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Categories</SelectItem>
-                    <SelectItem value="Party Jewellery for Men">Party Jewellery for Men</SelectItem>
-                    <SelectItem value="Party Jewellery for Women">Party Jewellery for Women</SelectItem>
-                    <SelectItem value="Winter Collection for Men">Winter Collection for Men</SelectItem>
-                    <SelectItem value="Winter Collection for Women">Winter Collection for Women</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Price Filter */}
-              <div className="mb-6">
-                <label className="text-sm font-semibold mb-3 block">
-                  Price Range: AED {priceRange[0]} - AED {priceRange[1]}
-                </label>
-                <Slider
-                  min={0}
-                  max={1000}
-                  step={10}
-                  value={priceRange}
-                  onValueChange={setPriceRange}
-                  className="mt-4"
-                />
-              </div>
-
-              <Button
-                variant="outline"
-                className="w-full"
-                onClick={() => {
-                  setPriceRange([0, 1000]);
-                  setSelectedCategory("all");
-                }}
-              >
-                Reset Filters
-              </Button>
-            </div>
-          </aside>
-
-          {/* Products Grid */}
-          <div className="lg:col-span-3">
-            <div className="flex justify-between items-center mb-6">
-              <p className="text-muted-foreground">
-                Showing {filteredProducts.length} products
-              </p>
-              <Select defaultValue="featured">
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Sort by" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="featured">Featured</SelectItem>
-                  <SelectItem value="price-low">Price: Low to High</SelectItem>
-                  <SelectItem value="price-high">Price: High to Low</SelectItem>
-                  <SelectItem value="newest">Newest</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.id} {...product} />
-              ))}
-            </div>
-
-            {filteredProducts.length === 0 && (
-              <div className="text-center py-20">
-                <p className="text-muted-foreground text-lg">
-                  No products found. Try adjusting your filters.
-                </p>
-              </div>
-            )}
-          </div>
+        {/* Category Filter */}
+        <div className="flex flex-wrap gap-3 justify-center mb-12">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={selectedCategory === category ? "default" : "outline"}
+              onClick={() => setSelectedCategory(category)}
+              className={
+                selectedCategory === category
+                  ? "bg-primary text-white"
+                  : "border-border hover:border-primary hover:text-primary"
+              }
+            >
+              {category}
+            </Button>
+          ))}
         </div>
+
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} {...product} />
+          ))}
+        </div>
+
+        {filteredProducts.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground text-lg">
+              No products found in this category.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

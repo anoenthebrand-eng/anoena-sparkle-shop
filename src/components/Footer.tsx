@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-2xl font-display font-bold">ANOENA</h3>
             <p className="text-sm text-muted-foreground">
-              Celebrating modern femininity with elegance and confidence.
+              Smart. Simple. Everyday Tech. Making your life easier, one gadget at a time.
             </p>
             <div className="flex space-x-3">
               <Button variant="ghost" size="icon" className="hover:text-primary">
@@ -83,9 +83,9 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h4 className="font-semibold mb-4">Join the ANOENA Circle 💌</h4>
+            <h4 className="font-semibold mb-4">Join the ANOENA Smart Circle</h4>
             <p className="text-sm text-muted-foreground mb-4">
-              Subscribe for exclusive offers and updates
+              Subscribe for exclusive deals and tech updates
             </p>
             <div className="flex gap-2">
               <Input
@@ -103,7 +103,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} ANOENA. All rights reserved. Made with love in UAE.
+            © {new Date().getFullYear()} ANOENA Electronics. All rights reserved. Smart tech for everyday living.
           </p>
         </div>
       </div>
